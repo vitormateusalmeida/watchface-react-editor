@@ -1,0 +1,10 @@
+{
+    "id": "amazfitx",
+    "name": "Amazfit X (Untested)",
+    "screen": {
+        "width": 207,
+        "height": 640,
+        "roundedBorder": 3
+    },
+    "fileType": "HMDIAL_GT"
+}

@@ -1,0 +1,10 @@
+{
+    "id": "amazfitgtr2",
+    "name": "Amazfit GTR 2 (Untested)",
+    "screen": {
+        "width": 454,
+        "height": 454,
+        "roundedBorder": 227
+    },
+    "fileType": "UIHH_GT2"
+}

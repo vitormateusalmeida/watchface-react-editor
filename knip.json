@@ -1,0 +1,16 @@
+{
+  "project": [
+    "src/**/*.{ts,tsx,js}",
+    "tests/**/*.{ts,tsx}",
+    "*.config.{ts,js,mjs}"
+  ],
+  "ignore": [
+    "src/components/ui/**",
+    "src/types/vendor-watchface-js.d.ts",
+    "src/vendor/watchface-js/**"
+  ],
+  "ignoreDependencies": [
+    "jszip",
+    "pngjs"
+  ]
+}

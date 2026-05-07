@@ -1,0 +1,10 @@
+{
+    "id": "amazfitgts2",
+    "name": "Amazfit GTS 2 (Untested)",
+    "screen": {
+        "width": 348,
+        "height": 442,
+        "roundedBorder": 55
+    },
+    "fileType": "UIHH_GT2"
+}

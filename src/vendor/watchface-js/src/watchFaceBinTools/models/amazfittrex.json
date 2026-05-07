@@ -1,0 +1,10 @@
+{
+    "id": "amazfittrex",
+    "name": "Amazfit T-Rex / Verge Lite (Untested)",
+    "screen": {
+        "width": 360,
+        "height": 360,
+        "roundedBorder": 180
+    },
+    "fileType": "HMDIAL_GT"
+}

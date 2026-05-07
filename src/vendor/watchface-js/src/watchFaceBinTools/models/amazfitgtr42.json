@@ -1,0 +1,10 @@
+{
+    "id": "amazfitgtr42",
+    "name": "Amazfit GTR 42mm (Untested)",
+    "screen": {
+        "width": 390,
+        "height": 390,
+        "roundedBorder": 195
+    },
+    "fileType": "HMDIAL_GT"
+}

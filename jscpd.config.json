@@ -1,0 +1,18 @@
+{
+  "threshold": 100,
+  "reporters": ["console", "json", "html"],
+  "output": "quality/reports/jscpd",
+  "pattern": [
+    "src/**/*.{ts,tsx,js}",
+    "tests/**/*.{ts,tsx}"
+  ],
+  "ignore": [
+    "src/components/ui/**",
+    "src/vendor/watchface-js/dist/**",
+    "src/vendor/watchface-js/**/*.test.js",
+    "quality/**",
+    "dist/**",
+    "coverage/**",
+    "node_modules/**"
+  ]
+}
