@@ -16,10 +16,12 @@ This runs:
 
 1. `pnpm typecheck`
 2. `pnpm lint`
-3. `pnpm test`
-4. `pnpm coverage`
-5. `pnpm duplication`
-6. `pnpm unused`
+3. `pnpm lint:report`
+4. `pnpm test`
+5. `pnpm coverage`
+6. `pnpm duplication`
+7. `pnpm unused`
+8. `pnpm quality:summary`
 
 ## Manual Mutation Testing
 
@@ -46,6 +48,10 @@ Latest local baseline run:
 - Coverage branches: `21.16%`
 - Coverage functions: `27.34%`
 - Coverage lines: `27.44%`
+- Duplication percentage: `0%`
+- Duplication fragments: `0`
+- Quality rule violations: `0`
+- Oversized files: `4`
 
 Initial thresholds are permissive:
 
@@ -54,7 +60,27 @@ Initial thresholds are permissive:
 - Stryker mutation break threshold: `0`
 - Sonar cognitive complexity: warning at `15`
 
-Future improvements should ratchet these values upward after reports stabilize.
+The blocking baseline is versioned at:
+
+```text
+quality/baseline.json
+```
+
+Generated comparison reports are written to:
+
+```text
+quality/reports/quality-current.json
+quality/reports/quality-summary.md
+```
+
+Merge requests should be rejected automatically when:
+
+- any coverage metric is lower than the baseline
+- duplication percentage or fragments are higher than the baseline
+- quality rule violations are higher than the baseline
+- oversized files are higher than the baseline
+
+Future improvements should ratchet these values in the correct direction after reports stabilize.
 
 ## Fixture
 

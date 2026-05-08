@@ -1,0 +1,16 @@
+{
+  "coverage": {
+    "lines": 27.44,
+    "statements": 27.1,
+    "functions": 27.34,
+    "branches": 21.16
+  },
+  "duplication": {
+    "percentage": 0,
+    "fragments": 0
+  },
+  "violations": {
+    "qualityRuleViolations": 0,
+    "oversizedFiles": 4
+  }
+}

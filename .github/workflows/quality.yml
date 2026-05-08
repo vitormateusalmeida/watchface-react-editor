@@ -30,6 +30,43 @@ jobs:
       - name: Run quality gate
         run: pnpm quality:gate
 
+      - name: Comment quality summary
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('node:fs')
+            const marker = '<!-- watchface-quality-summary -->'
+            const path = 'quality/reports/quality-summary.md'
+            const body = fs.existsSync(path)
+              ? `${marker}\n${fs.readFileSync(path, 'utf8')}`
+              : `${marker}\n# Quality Summary\n\nNo quality summary was generated. Check the workflow logs.`
+
+            const { owner, repo } = context.repo
+            const issue_number = context.issue.number
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+            })
+            const previous = comments.find((comment) => comment.body?.startsWith(marker))
+
+            if (previous) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: previous.id,
+                body,
+              })
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body,
+              })
+            }
+
       - name: Upload quality reports
         if: always()
         uses: actions/upload-artifact@v5
